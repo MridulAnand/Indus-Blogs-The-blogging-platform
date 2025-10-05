@@ -566,4 +566,5 @@ def logout():
     session.clear()
     return redirect(url_for("home"))
 
-app.run(debug=False)
+if __name__ == "__main__":
+    app.run(debug=False,host="0.0.0.0")
