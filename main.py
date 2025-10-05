@@ -566,4 +566,4 @@ def logout():
     session.clear()
     return redirect(url_for("home"))
 
-app.run(debug=True)
+app.run(debug=False)
