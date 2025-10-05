@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="static/img1.png">
+    <!-- or by using url_for (this is considered better way than above one also this is will not be affected if there is any issue in working directory)--> 
+    <h4>The below method is considered better way than above one also this is will not be affected if there is any issue in working directory</h4>
+    <img src="{{url_for('static',filename='img1.png')}}">
+</body>
+</html>

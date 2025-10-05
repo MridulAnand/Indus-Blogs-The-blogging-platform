@@ -1,0 +1,35 @@
+body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+        height: 100vh;
+      }
+
+      .form-signin {
+        width: 100%;
+        max-width: 360px;
+        padding: 15px;
+        margin: auto;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+
+      .form-signin .form-control {
+        margin-bottom: 10px;
+      }
+
+      .form-signin img {
+        margin-bottom: 20px;
+      }
+
+      .form-signin button {
+        margin-top: 10px;
+      }
+
+      .text-muted {
+        font-size: 0.9rem;
+      }

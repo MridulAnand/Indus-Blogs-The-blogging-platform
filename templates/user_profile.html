@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header-->
+        <!-- <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')"> -->
+
+            {% set fname = 'assets/img/'+ user_data.profile_photo %}
+            <header class="masthead" style="background-image: url('{{ url_for('static', filename=fname) }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <!-- <h1>Clean Blog</h1> -->
+                            <h1>{{user_data.name}}</h1>
+                            <!-- <span class="subheading">A Blog Theme by Start Bootstrap</span> -->
+                            <span class="subheading">View Profile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+         <div class="d-flex justify-content-around mb-4">
+            <p>User name :<br> <b>{{user_data.name}}</b></p> 
+            <p>Date of joining :<br> <b>{{user_data.date.strftime("%d-%B-%Y")}}</b></p> 
+        </div>
+        <hr>
+
+        <!-- posts -->
+
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                {% if post_by_user and post_by_user|length %}  
+                <h1 style="text-align:center">All Posts By <span style="color: #0085A1;">{{user_data.name.split()[0]}}</span></h1>
+                <br> 
+                {% for post in post_by_user %}
+                <div class="post-preview">
+                    <a href="/post/{{post.slug}}">
+                        <h2 class="post-title">{{post.title}}...</h2>
+                        {% if post.tagline.replace(" ","")  %}
+                        <h3 class="post-subtitle">{{post.tagline}}...</h3>
+                        {% else %}
+                        <h3 class="post-subtitle">{{post.content[0:25]}}...</h3>
+                        {% endif %}
+                    </a>
+                    <p class="post-meta">
+                        Posted by
+                        <!-- <a href="/user_profile/{{post.sno}}/{{post.name}}">{{post.name}}</a> -->
+                        <!-- <a href="/admin_blog/{{post.sno}}/{{username}}">Admin</a>   -->
+                        <a href="#">{{post.name}}</a>
+                        on {{post.date.strftime("%B %d, %Y")}}
+                        at {{post.date.strftime("%H:%M:%S")}}
+                    </p>
+                </div>
+                {% endfor %}
+                <hr class="my-4" />
+                    <!-- Pager-->
+                    {% if no_of_post < total_posts %} 
+                    <div class="d-flex justify-content-between mb-4">
+                        <a class="btn btn-primary" href="{{new}}">← Newer Posts</a>
+                        <a class="btn btn-primary" href="{{old}}">Older Posts →</a>
+                    </div>
+                    {% endif %}
+                {% else %}
+                <h1 style="text-align:center">Currently No Posts By <span style="color: #0085A1;">{{user_data.name.split()[0]}}</span></h1> 
+                <br>
+                <p style="text-align:center;color: #0085A1; font-size: 25px;"> No posts! </p>
+                {% endif %}     
+
+                
+                </div>
+            </div>
+        </div>
+        
+{% endblock %}     

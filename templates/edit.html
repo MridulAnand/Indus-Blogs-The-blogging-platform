@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Page Header-->
+        <!-- <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')"> -->
+            <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <!-- <h1>Clean Blog</h1> -->
+
+                            {% if sno == "0" %}
+                            <h1>New Post</h1>
+                            {% else %}
+                            <h1>Edit Post</h1>
+                            {% endif %}
+                            <!-- <span class="subheading">A Blog Theme by Start Bootstrap</span> -->
+                            <span class="subheading">{{"Manage your posts and changes".title()}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+         <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- <h2 style="text-align: center;">Upload A File</h2><br>
+
+                    <form id="Uploader" action="/uploader" method="post" enctype="multipart/form-data">      
+
+                    <input type="file" class="form-control" name="fileupload" accept=".jpg,.jpeg,.png,.gif" required>
+                    <p style="text-align:center; font-size:15px;">If you want to display this image in your post please write this name below in <b>Image file</b> field</p>
+                    <button type="submit" class="btn btn-primary w-100">Upload</button>
+
+                    </form> -->
+                    <hr>
+                    {% if sno == "0" %}
+                    <h2 style="text-align: center;">Write Posts Below</h2>
+                    {% else %}
+                    <h2 style="text-align: center;">Edit Posts Below</h2>
+                    {% endif %}
+
+
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN" action="/edit/{{sno}}" method="post" enctype="multipart/form-data">
+                                {% if sno == "0" %}
+                                    {% set title = "" %}
+                                    {% set tagline = "" %}
+                                    {% set slug = "" %}
+                                    {% set content = "" %}
+                                    {% set img_file = "" %}
+                                {% else %}
+                                    {% set title = post.title %}
+                                    {% set tagline = post.tagline %}
+                                    {% set slug = post.slug  %}
+                                    {% set content = post.content %}
+                                    {% set img_file = post.img_file %}
+                                {% endif %}    
+                                
+                                <div class="form-floating">
+                                    <input class="form-control" name="title" id="title" type="text" placeholder="Edit Title" value="{{title}}" required data-sb-validations="required" />
+                                    <label for="title">Title</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A title is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="tagline" id="tagline" type="text" placeholder="Edit Tagline" value="{{tagline}}" data-sb-validations="required" />
+                                    <label for="tagline">Tagline</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Tagline is not valid.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="slug" id="slug" type="text" placeholder="Edit Slug" value="{{slug}}" autocomplete="off" required data-sb-validations="required" />
+                                    <label for="slug">Slug {%if sno != "0" %}<small>(If you edit this post, the slug will automatically be updated as well)</small> {% endif %} </label>
+                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A slug is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <textarea class="form-control" name="content" id="content" placeholder="Edit Content" style="height: 12rem" value="{{content}}" required data-sb-validations="required">{{content}}</textarea>
+                                    <label for="content">Content</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A content is required.</div>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" name="img_file" id="img_file" type="file" placeholder="Image" value="{{img_file}}" title="Only .jpg,.jpeg,.png,.gif are allowed" accept=".jpg,.jpeg,.png,.gif" data-sb-validations="required">
+                                    <label for="image">Image File</label>
+                                </div>
+                                <br />
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        To activate this form, sign up at
+                                        <br />
+                                        <!-- <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a> -->
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                                <!-- Submit Button-->
+                                <!-- <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button> -->
+                                <input type="submit" value="Send" class="btn btn-primary" id="submitButton">
+                            </form>
+
+
+
+                </div>
+            </div>
+        </div>    
+        
+{% endblock %}     
