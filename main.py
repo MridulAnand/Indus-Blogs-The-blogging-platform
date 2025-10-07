@@ -472,7 +472,7 @@ def user_profile(sno,name):
         
         user_data = User.query.filter_by(name=name,email=post_data.email).first()
 
-        return render_template("user_profile.html",params=params,logged_in=session.get("logged_in", False),user_data=user_data,post_by_user=post_by_user,new=new,old=old,total_posts=total_posts,no_of_post=len(params["no_of_post"]))
+        return render_template("user_profile.html",params=params,logged_in=session.get("logged_in", False),user_data=user_data,post_by_user=post_by_user,new=new,old=old,total_posts=total_posts,no_of_post=int(params["no_of_post"]))
     else:
         # return redirect(url_for("error2"))
         return redirect(url_for("error2"))
@@ -509,7 +509,7 @@ def my_user_profile():
                                                                                                 
         user_data = User.query.filter_by(name=session["name"],email=session["user"]).first()
         
-        return render_template("user_profile.html",params=params,logged_in=session.get("logged_in", False),user_data=user_data,post_by_user=post_by_user,new=new,old=old,total_posts=total_posts,no_of_post=len(params["no_of_post"]))
+        return render_template("user_profile.html",params=params,logged_in=session.get("logged_in", False),user_data=user_data,post_by_user=post_by_user,new=new,old=old,total_posts=total_posts,no_of_post=int(params["no_of_post"]))
     else:
         return redirect(url_for("dashboard"))
     
