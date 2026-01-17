@@ -6,15 +6,25 @@ Visit My Flask App By Clicking https://indus-blog-deployed.onrender.com/
 # 🚀 Features
 
 User registration and login
+
 Email verification using secure tokens
+
 Forgot password & reset password via email
+
 Create, edit, and delete blog posts
+
 Image upload support for posts and profile photos
+
 User dashboard
+
 Public and personal user profiles
+
 Pagination for posts
+
 Contact form with email notifications
+
 Session management with expiration
+
 Custom error pages (400, 404, 500)
 
 # 🛠️ Tech Stack
