@@ -45,6 +45,7 @@ Frontend: Jinja2 templates (HTML/CSS)
 
 # 📁 Project Structure (Important Files)
 .
+
 ├── main(flask5).py        # Main Flask application
 
 ├── config.json            # Configuration file (not committed)
@@ -53,9 +54,9 @@ Frontend: Jinja2 templates (HTML/CSS)
 
 ├── static/
 
-│   ├── uploads/           # Uploaded images
+│        ├── uploads/         # Uploaded images
 
-│   └── css/
+│        └── css/
 
 ├── requirements.txt
 
@@ -67,6 +68,7 @@ Create a config.json file in the root directory:
 
 {
   "params": {
+  
     "blog_name": "My Blog",
     
     "secret_key": "your_secret_key",
