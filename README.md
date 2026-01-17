@@ -54,9 +54,9 @@ Frontend: Jinja2 templates (HTML/CSS)
 
 ├── static/
 
-│        ├── uploads/         # Uploaded images
+│      ├── uploads/        # Uploaded images
 
-│        └── css/
+│      └── css/
 
 ├── requirements.txt
 
