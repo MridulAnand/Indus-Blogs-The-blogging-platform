@@ -3,7 +3,7 @@ Indus Blogs is a full-stack Flask-powered blogging platform where tradition flow
 
 Visit My Flask App By Clicking https://indus-blog-deployed.onrender.com/
 
-🚀 Features
+#🚀 Features
 
 User registration and login
 Email verification using secure tokens
