@@ -17,7 +17,7 @@ Contact form with email notifications
 Session management with expiration
 Custom error pages (400, 404, 500)
 
-🛠️ Tech Stack
+# 🛠️ Tech Stack
 
 Backend: Flask (Python)
 Database: SQLAlchemy (MySQL)
@@ -27,7 +27,7 @@ Email Service: Flask-Mail (Gmail SMTP)
 Security: ItsDangerous (token-based verification)
 Frontend: Jinja2 templates (HTML/CSS)
 
-📁 Project Structure (Important Files)
+# 📁 Project Structure (Important Files)
 .
 ├── main(flask5).py        # Main Flask application
 ├── config.json            # Configuration file (not committed)
@@ -37,7 +37,8 @@ Frontend: Jinja2 templates (HTML/CSS)
 │   └── css/
 ├── requirements.txt
 └── README.md
-⚙️ Configuration
+
+ # ⚙️ Configuration
 
 Create a config.json file in the root directory:
 
@@ -57,10 +58,10 @@ Create a config.json file in the root directory:
   }
 }
 
-⚠️ Important:
+# ⚠️ Important:
 Use a Gmail App Password, not your real Gmail password.
 
-📦 Installation
+# 📦 Installation
 1. Clone the repository
 git clone https://github.com/MridulAnand/Indus-Blogs-The-blogging-platform.git
 cd flask-blog
@@ -69,20 +70,22 @@ python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 3. Install dependencies
 pip install -r requirements.txt
-🗄️ Database Setup
+
+# 🗄️ Database Setup
 
 Run the following in Python shell:
 
 from main import db
 db.create_all()
-▶️ Run the Application
+
+# ▶️ Run the Application
 python main(flask5).py
 
 Visit:
 
 http://127.0.0.1:5000/
 
-🔐 Authentication Flow
+# 🔐 Authentication Flow
 
 User registers
 Verification email is sent
@@ -90,39 +93,39 @@ User clicks verification link
 Email is verified
 User can log in and access dashboard
 
-📧 Email Features
+# 📧 Email Features
 
 Email verification link
 Password reset link
 Contact form notifications
 All emails are sent using Flask-Mail + Gmail SMTP.
 
-🖼️ File Upload Rules
+# 🖼️ File Upload Rules
 
 Allowed formats: jpg, jpeg, png, gif
 Uploaded files are renamed securely
 Default image: home-bg.jpg
 
-🧪 Error Handling
+# 🧪 Error Handling
 
 Custom pages are shown for:
 400 – Bad Request
 404 – Page Not Found
 500 – Internal Server Error
 
-🔒 Security Features
+# 🔒 Security Features
 
 Password hashing using scrypt
 Token-based verification & reset
 Secure filename handling
 Session expiration (7 days)
 
-📜 License
+# 📜 License
 
 This project is for educational and personal use.
 This project is licensed under the MIT License-Feel free to modify and improve it.
 
-✨ Author
+# ✨ Author
 
 Built by Mridul Anand with Flask
 GitHub: https://github.com/MridulAnand/
