@@ -46,7 +46,7 @@ Frontend: Jinja2 templates (HTML/CSS)
 # 📁 Project Structure (Important Files)
 .
 
-├── main(flask5).py        # Main Flask application
+├── main.py        # Main Flask application
 
 ├── config.json            # Configuration file (not committed)
 
@@ -120,7 +120,7 @@ from main import db
 db.create_all()
 
 # ▶️ Run the Application
-python main(flask5).py
+python main.py
 
 Visit:
 
