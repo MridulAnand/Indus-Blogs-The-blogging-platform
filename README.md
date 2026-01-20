@@ -75,7 +75,7 @@ Create a config.json file in the root directory:
     
     "local_server": true,
     
-    "local_uri": "sqlite:///blog.db",
+    "local_uri": "mysql://user:password@localhost/dbname",
     
     "prod_uri": "mysql://user:password@localhost/dbname",
     
