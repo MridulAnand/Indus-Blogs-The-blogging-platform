@@ -68,6 +68,7 @@ Create a config.json file in the root directory:
 
 {
     "params":{
+    
          "local_server":"True",
          
          "local_uri":"mysql://root:@localhost/learningflask",
@@ -88,7 +89,9 @@ Create a config.json file in the root directory:
          
          "email_password":"your email's password",
          
-         "about_text":"This blog platform is designed to deliver a secure, scalable, and user-friendly experience.\nBuilt with Flask and Bootstrap, it supports dynamic routing, session-based access control, and responsive UI rendering.\nUsers can register, manage profiles, and publish posts with clean formatting and image support.\nThe system includes robust validation, secure file uploads, and pagination for seamless navigation.\nEvery feature from 'slug generation' to 'flash messaging' was crafted with real-world reliability in mind.\n\nThis project is developed by Mridul Anand, an aspiring software engineer",
+         "about_text":"This blog platform is designed to deliver a secure, scalable, and user-friendly experience.\nBuilt with Flask and Bootstrap, it supports 
+         dynamic routing, session-based access control, and responsive UI rendering.\nUsers can register, manage profiles, and publish posts with clean formatting and image support.\nThe system includes robust validation, secure file uploads, 
+         and pagination for seamless navigation.\nEvery feature from 'slug generation' to 'flash messaging' was crafted with real-world reliability in mind.\n\nThis project is developed by Mridul Anand, an aspiring software engineer",
         
          "no_of_post":"4",
          
@@ -99,6 +102,7 @@ Create a config.json file in the root directory:
          "max_reset_token_age":"3600",
          
          "secret_key":"Generate your security key using 'secret' module in python and paste it here"
+         
     }
 }
 
