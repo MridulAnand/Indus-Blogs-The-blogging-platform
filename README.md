@@ -67,6 +67,7 @@ Frontend: Jinja2 templates (HTML/CSS)
 Create a config.json file in the root directory:
 
 {
+
     "params":{
     
          "local_server":"True",
