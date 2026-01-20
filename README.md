@@ -67,30 +67,39 @@ Frontend: Jinja2 templates (HTML/CSS)
 Create a config.json file in the root directory:
 
 {
-  "params": {
-  
-    "blog_name": "My Blog",
-    
-    "secret_key": "your_secret_key",
-    
-    "local_server": true,
-    
-    "local_uri": "mysql://user:password@localhost/dbname",
-    
-    "prod_uri": "mysql://user:password@localhost/dbname",
-    
-    "upload_location": "static/uploads",
-    
-    "gmail_user": "your_email@gmail.com",
-    
-    "email_password": "your_app_password",
-    
-    "no_of_post": 5,
-    
-    "max_token_age": 86400,
-    
-    "max_reset_token_age": 3600
-  }
+    "params":{
+         "local_server":"True",
+         
+         "local_uri":"mysql://root:@localhost/learningflask",
+         
+         "prod_uri":"mysql://root:@localhost/learningflask",
+         
+         "tw_url":"https://x.com",
+         
+         "fb_url":"https://facebook.com",
+         
+         "gh_url":"https://github.com",
+         
+         "blog_name":"Indus Blogs",
+         
+         "tag_line":"Where tradition flows into technology",
+         
+         "gmail_user":"your email (example@domain.com)",
+         
+         "email_password":"your email's password",
+         
+         "about_text":"This blog platform is designed to deliver a secure, scalable, and user-friendly experience.\nBuilt with Flask and Bootstrap, it supports dynamic routing, session-based access control, and responsive UI rendering.\nUsers can register, manage profiles, and publish posts with clean formatting and image support.\nThe system includes robust validation, secure file uploads, and pagination for seamless navigation.\nEvery feature from 'slug generation' to 'flash messaging' was crafted with real-world reliability in mind.\n\nThis project is developed by Mridul Anand, an aspiring software engineer",
+        
+         "no_of_post":"4",
+         
+         "upload_location":"C:\\Users\\mridu\\Desktop\\indus blog\\static\\assets\\img",
+         
+         "max_token_age":"86400",
+         
+         "max_reset_token_age":"3600",
+         
+         "secret_key":"Generate your security key using 'secret' module in python and paste it here"
+    }
 }
 
 # ⚠️ Important:
