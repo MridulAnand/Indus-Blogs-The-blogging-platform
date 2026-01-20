@@ -190,5 +190,7 @@ Built by Mridul Anand with Flask
 
 GitHub: https://github.com/MridulAnand/
 
+Linkedin: https://linkedin.com/in/mridul-anand-4761752b7
+
 
 
